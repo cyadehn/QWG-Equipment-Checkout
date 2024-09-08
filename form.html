@@ -32,7 +32,19 @@
                     <label for="model" class="form-label">Bike</label>
                     <select onchange="helmetCheck()" class="form-select" id="bikeModel" name="bikeModel" disabled></select>
                     <!-- helmet radio button group -->
+                    <fieldset id="helmetFieldset" name="helmetFieldset" disabled>
+                        <label for="helmet">Do you need a helmet?</label>
+                        <label><input type="radio" name="helmet" value="yes" required/> Yes</label>
+                        <label><input type="radio" name="helmet" value="no" required/> No</label>
+                        <span id="helmetSorry" style="display:none">There are no available helmets for your selected event.</span>
+                    </fieldset>
                     <!-- bike lights radio button group -->
+                    <fieldset id="lightsFieldset" name="lightsFieldset" disabled>
+                        <label for="lights">Do you need bike lights?</label>
+                        <label><input type="radio" name="lights" value="yes" required/> Yes</label>
+                        <label><input type="radio" name="lights" value="no" required/> No</label>
+                        <span id="lightsSorry" style="display:none">There are no available lights for your selected event.</span>
+                    </fieldset>
                 </div>
             </form>
         </div>
