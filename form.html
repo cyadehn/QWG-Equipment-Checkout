@@ -21,8 +21,11 @@
                     <input type="text" class="form-control" id="name" name="name" required>
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="email" class="form-label">Contact (email, phone, IG handle)</label>
-                    <input type="text" class="form-control" id="contact" name="contact" required>
+                    <label for="email" class="form-label">Contact</label>
+                    <input type="text" class="form-control" aria-describedby="contactHelpBlock" id="contact" name="contact" required>
+                    <div id="contactHelpBlock" class=""form-text">
+                        Please provide a valid email, phone number, or Instagram handle.
+                    </div>
                 </div>
                 <div class="mb-3 mt-3">
                     <!-- event selection -->
