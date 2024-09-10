@@ -8,9 +8,9 @@ function sendFormDataToSheets(form) {
       form.name,
       form.contact,
       form.event,
-      form.model,
-      form.helmet,
-      form.lights
+      form.bikeModel
+      //form.helmet,
+      //form.lights
     ])
 }
 
