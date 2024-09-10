@@ -148,37 +148,6 @@
                 dropdown.insertBefore(noneOption, dropdown.firstChild);
                 dropdown.removeAttribute("disabled"); // reenable input fields
                 dropdown.selectedIndex = 0;
-                createAccessoryOptions();
-            }
-
-            function createAccessoryOptions() {
-                // refs
-                let helmetField = document.getElementById("helmetFieldset");
-                let lightsField = document.getElementById("lightsFieldset");
-                let helmetSorry = document.getElementById("helmetSorry");
-                let lightsSorry = document.getElementById("lightsSorry");
-                // determine if helmets are available
-                const helmetCount = previousRequests.filter(request => request[4] == "yes").length;
-                console.log("helmets requested: " + helmetCount);
-                if (helmetCount < availableHelmets) {
-                    helmetField.style.display = "block";
-                    helmetField.disabled = false;
-                    helmetSorry.style.display = "none";
-                } else {
-                    helmetField.disabled = true;
-                    helmetSorry.style.display = "inline";
-                }
-                // determine if lights are available
-                const lightCount = previousRequests.filter(request => request[5] == "yes").length;
-                console.log("lights requested: " + lightCount);
-                if (lightCount < availableLights) {
-                    lightsField.style.display = "block";
-                    lightsField.disabled = false;
-                    lightsSorry.style.display = "none";
-                } else {
-                    lightsField.disabled = true;
-                    lightsSorry.style.display = "inline";
-                }
             }
 
             function helmetCheck() {
