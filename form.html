@@ -162,12 +162,6 @@
             dropdown.selectedIndex = 0;
         }
 
-        function helmetCheck() {
-            // select Helmet "Yes" if bike is selected
-            let modelDropdown = document.getElementById("model");
-            console.log("selected model is " + modelDropdown.value)
-            if (model.value !== "none needed (or click to view available bikes)") {
-                checkRadio("helmet", "yes");
             };
         }
 
@@ -191,10 +185,6 @@
             $('#exampleModal').modal('show');
         }
 
-        function closeForm() {
-            google.script.host.close();
-        }
-
         function reloadPage() {
             google.script.run.withSuccessHandler(function(url){
                 window.open(url,'_top');
@@ -205,26 +195,6 @@
             window.top.location = "https://www.instagram.com/queerswithgears502/";
         }
 
-        function getRadioSelection(name) {
-            var buttons = document.getElementsByName(name);
-            var selection;
-            for (var i = 0; i < buttons.length; i++) {
-                if (buttons[i].checked) {
-                    selection = buttons[i].value;
-                    return selection;
-                };
-                selection = null;
-            }
-            return selection;
-        }
-
-        function checkRadio(name, value) {
-            var buttons = document.getElementsByName(name);
-            for (var i = 0; i < buttons.length; i++) {
-                if (buttons[i].value == value) {
-                    buttons[i].checked = true;
-                };
-            }
         }
     </script>
 </body>
