@@ -48,8 +48,7 @@
                     <!-- bike selection -->
                     <div class="mb-3">
                         <label for="model" class="form-label">Bike</label>
-                        <select class="form-select" id="bikeModel" name="bikeModel" placeholder="bikeModel"
-                            disabled></select>
+                        <select class="form-select" id="bikeModel" name="bikeModel" placeholder="bikeModel" disabled required></select>
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary" id="formSubmit" data-toggle="modal" data-target="#exampleModal">
@@ -155,13 +154,26 @@
                 }
                 dropdown.appendChild(option);
             });
-            let noneOption = document.createElement("option");
-            noneOption.text = "none needed (or click to view available bikes)";
-            dropdown.insertBefore(noneOption, dropdown.firstChild);
-            dropdown.removeAttribute("disabled"); // reenable input fields
-            dropdown.selectedIndex = 0;
-        }
-
+            let nlOptions = document.querySelectorAll('#bikeModel > option');
+            let optionsArray = Array.from(nlOptions);
+            console.log(optionsArray);
+            let allDisabled = optionsArray.every(isDisabled);
+            console.log("All options are disabled: " + allDisabled);
+            let placeholderOpt = document.createElement("option");
+            let submitBtn = document.getElementById("formSubmit");
+            if(allDisabled) {
+                placeholderOpt.text = "No available bikes";
+                dropdown.insertBefore(placeholderOpt, dropdown.firstChild);
+                dropdown.selectedIndex = 0;
+                dropdown.disabled = true;
+                submitBtn.disabled = true;
+            } else {
+                placeholderOpt.text = "Click to view available bikes";
+                dropdown.insertBefore(placeholderOpt, dropdown.firstChild);
+                dropdown.removeAttribute("disabled"); // reenable input fields
+                dropdown.selectedIndex = 0;
+                dropdown.disabled = false;
+                submitBtn.disabled = false;
             };
         }
 
@@ -195,6 +207,8 @@
             window.top.location = "https://www.instagram.com/queerswithgears502/";
         }
 
+        function isDisabled(element, index, array) {
+            return element.disabled;
         }
     </script>
 </body>
