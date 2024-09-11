@@ -21,10 +21,9 @@ function doGet(e) {
   }
 }
 
-function getScriptURL(qs) {
+function getScriptURL() {
   var url = ScriptApp.getService().getUrl();
-  Logger.log(url + qs);
-  return url + qs ;
+  return url;
 }
 
 function sendFormDataToSheets(form) {
