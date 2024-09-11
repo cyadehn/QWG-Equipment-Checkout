@@ -65,7 +65,7 @@
                     </div>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="checkbox" value="" id="confirmAcknowledge">
+                    <input class="form-check-input" type="checkbox" value="not signed" onclick="handleCheck(this)" id="confirmAcknowledge" name="confirmAcknowledge" required>
                     <label class="form-check-label" for="confirmAcknowledge">
                         I agree that I must confirm my attendance with ride leaders for a bike to be available.
                     </label>
@@ -228,6 +228,14 @@
 
         function isDisabled(element, index, array) {
             return element.disabled;
+        }
+
+        function handleCheck(checkbox) {
+            if(checkbox.checked) {
+                checkbox.value = "signed";
+            } else {
+                checkbox.value = "not signed";
+            }
         }
     </script>
 </body>

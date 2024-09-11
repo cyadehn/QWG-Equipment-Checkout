@@ -24,12 +24,16 @@ function getScriptURL() {
 }
 
 function sendFormDataToSheets(form) {
+  Logger.log(form);
   SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Requests")
     .appendRow([
       form.name,
       form.contact,
       form.event,
-      form.bikeModel
+      form.bikeModel,
+      "none",
+      "none",
+      form.confirmAcknowledge
       //form.helmet,
       //form.lights
     ])
