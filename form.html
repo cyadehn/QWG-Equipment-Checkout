@@ -25,7 +25,7 @@
 <body class="bg">
     <div class="row justify-content-center">
         <div class="container col-5 m-5 bg-light p-5 rounded">
-            <h1>QWG502 Equipment Reservation</h1>
+            <h1 class="mb-4">QWG502 Bike Reservation Form</h1>
             <form id="form" onsubmit="sendDataToGAS(this)">
                 <div class="mb-2 mt-2">
                     <label for="name" class="form-label">Name</label>
@@ -40,13 +40,13 @@
                 </div>
                 <div class="mb-3 mt-3">
                     <!-- event selection -->
-                    <div class="mb-3">
+                    <div class="mb-2 mt-2">
                         <label for="event" class="form-label">Event</label>
                         <select onchange="createModelOptions()" class="form-select" id="event" name="event"
                             placeholder="event" required></select>
                     </div>
                     <!-- bike selection -->
-                    <div class="mb-3">
+                    <div class="mb-2 mt-2">
                         <label for="model" class="form-label">Bike</label>
                         <select class="form-select" id="bikeModel" name="bikeModel" placeholder="bikeModel" disabled required></select>
                     </div>
