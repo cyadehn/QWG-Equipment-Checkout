@@ -1,5 +1,30 @@
-function doGet() {
-  return HtmlService.createHtmlOutputFromFile("form")
+function doGet(e) {
+  Logger.log('query params: ' + Utilities.jsonStringify(e));
+  if (e.queryString !== '') {
+    switch (e.parameter.mode) {
+      case 'thanks':
+        return HtmlService
+          .createHtmlOutputFromFile('thanks')
+          .append('<br />onesheet')
+        break;
+      default:
+        return HtmlService
+          .createHtmlOutputFromFile('form')
+          .append('<br />No Query String')
+        break;
+    }
+  }
+  else {
+    return HtmlService
+      .createHtmlOutputFromFile('form')
+      .append('<br />No Query String')
+  }
+}
+
+function getScriptURL(qs) {
+  var url = ScriptApp.getService().getUrl();
+  Logger.log(url + qs);
+  return url + qs ;
 }
 
 function sendFormDataToSheets(form) {
