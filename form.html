@@ -26,27 +26,26 @@
         <div class="container col-5 m-5 bg-light p-5 rounded">
             <h1>QWG502 Equipment Reservation</h1>
             <form onsubmit="sendDataToGAS(this)">
-                <div class="form-floating mb-3 mt-2">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="name" required>
+                <div class="mb-3 mt-2">
                     <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
                 </div>
-                <div class="form-floating mb-3 mt-2">
-                    <input type="text" class="form-control" aria-describedby="contactHelpBlock" id="contact"
-                        name="contact" placeholder="contact" required>
+                <div class="mb-3 mt-2">
                     <label for="email" class="form-label">Contact</label>
+                    <input type="text" class="form-control" aria-describedby="contactHelpBlock" id="contact" name="contact" required>
                     <div id="contactHelpBlock" class="form-text">
                         Please provide a valid email, phone number, or Instagram handle.
                     </div>
                 </div>
                 <div class="mb-3 mt-3">
                     <!-- event selection -->
-                    <div class="form-floating mb-3">
+                    <div class="mb-3">
                         <label for="event" class="form-label">Event</label>
                         <select onchange="createModelOptions()" class="form-select" id="event" name="event"
                             placeholder="event" required></select>
                     </div>
                     <!-- bike selection -->
-                    <div class="form-floating mb-3">
+                    <div class="mb-3">
                         <label for="model" class="form-label">Bike</label>
                         <select class="form-select" id="bikeModel" name="bikeModel" placeholder="bikeModel"
                             disabled></select>
