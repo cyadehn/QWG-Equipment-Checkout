@@ -18,60 +18,62 @@
     </head>
 
     <body class="bg">
-        <div class="container">
-            <h1>QWG502 Equipment Reservation</h1>
-            <form onsubmit="sendDataToGAS(this)">
-                <div class="form-floating mb-3 mt-2">
-                    <input type="text" class="form-control" id="name" name="name" placeholder="name" required>
-                    <label for="name" class="form-label">Name</label>
-                </div>
-                <div class="form-floating mb-3 mt-2">
-                    <input type="text" class="form-control" aria-describedby="contactHelpBlock" id="contact" name="contact" placeholder="contact" required>
-                    <label for="email" class="form-label">Contact</label>
-                    <div id="contactHelpBlock" class="form-text">
-                        Please provide a valid email, phone number, or Instagram handle.
+        <div class="row justify-content-center">
+            <div class="container col-5 m-5 bg-light p-5 rounded">
+                <h1>QWG502 Equipment Reservation</h1>
+                <form onsubmit="sendDataToGAS(this)">
+                    <div class="form-floating mb-3 mt-2">
+                        <input type="text" class="form-control" id="name" name="name" placeholder="name" required>
+                        <label for="name" class="form-label">Name</label>
                     </div>
-                </div>
-                <div class="mb-3 mt-3">
-                    <!-- event selection -->
-                    <div class ="form-floating mb-3">
-                        <label for="event" class="form-label">Event</label>
-                        <select onchange="createModelOptions()" class="form-select" id="event" name="event" placeholder="event" required></select>
-                    </div>
-                    <!-- bike selection -->
-                    <div class ="form-floating mb-3">
-                        <label for="model" class="form-label">Bike</label>
-                        <select class="form-select" id="bikeModel" name="bikeModel" placeholder="bikeModel" disabled></select>
-                    </div>
-                </div>
-                <button type="submit" class="btn btn-primary" id="formSubmit" data-toggle="modal" data-target="#exampleModal">Submit</button>
-                <button class="btn btn-primary" type="button" id="submittingSpinner" style="display:none" disabled></button>
-                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                    <span class="sr-only">Submitting...</span>
-                </button>
-                <!-- Modal -->
-                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Form Submitted</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <!-- <span aria-hidden="true">&times;</span> -->
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                        Your request has been submitted! Please reach out on our <a href="https://discord.gg/byjmDBnxyN" target="_blank">Discord</a> or Instagram @QueersWithGears502 if you have any
-                        questions.
-                        </div>
-                        <div class="modal-footer">
-                        <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="closeForm">Close</button> -->
-                        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                    <div class="form-floating mb-3 mt-2">
+                        <input type="text" class="form-control" aria-describedby="contactHelpBlock" id="contact" name="contact" placeholder="contact" required>
+                        <label for="email" class="form-label">Contact</label>
+                        <div id="contactHelpBlock" class="form-text">
+                            Please provide a valid email, phone number, or Instagram handle.
                         </div>
                     </div>
+                    <div class="mb-3 mt-3">
+                        <!-- event selection -->
+                        <div class ="form-floating mb-3">
+                            <label for="event" class="form-label">Event</label>
+                            <select onchange="createModelOptions()" class="form-select" id="event" name="event" placeholder="event" required></select>
+                        </div>
+                        <!-- bike selection -->
+                        <div class ="form-floating mb-3">
+                            <label for="model" class="form-label">Bike</label>
+                            <select class="form-select" id="bikeModel" name="bikeModel" placeholder="bikeModel" disabled></select>
+                        </div>
                     </div>
-                </div>
-            </form>
+                    <button type="submit" class="btn btn-primary" id="formSubmit" data-toggle="modal" data-target="#exampleModal">Submit</button>
+                    <button class="btn btn-primary" type="button" id="submittingSpinner" style="display:none" disabled></button>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        <span class="sr-only">Submitting...</span>
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Form Submitted</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <!-- <span aria-hidden="true">&times;</span> -->
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                            Your request has been submitted! Please reach out on our <a href="https://discord.gg/byjmDBnxyN" target="_blank">Discord</a> or Instagram @QueersWithGears502 if you have any
+                            questions.
+                            </div>
+                            <div class="modal-footer">
+                            <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal" onClick="closeForm">Close</button> -->
+                            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
         <script async defer>
             var globalEquipmentArray = [];
