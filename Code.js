@@ -5,19 +5,16 @@ function doGet(e) {
       case 'thanks':
         return HtmlService
           .createHtmlOutputFromFile('thanks')
-          .append('<br />onesheet')
         break;
       default:
         return HtmlService
           .createHtmlOutputFromFile('form')
-          .append('<br />No Query String')
         break;
     }
   }
   else {
     return HtmlService
       .createHtmlOutputFromFile('form')
-      .append('<br />No Query String')
   }
 }
 
