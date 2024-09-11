@@ -51,12 +51,9 @@
                             disabled></select>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary" id="formSubmit" data-toggle="modal"
-                    data-target="#exampleModal">Submit</button>
-                <button class="btn btn-primary" type="button" id="submittingSpinner" style="display:none"
-                    disabled></button>
-                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                <span class="sr-only">Submitting...</span>
+                <button type="submit" class="btn btn-primary" id="formSubmit" data-toggle="modal" data-target="#exampleModal">
+                    Submit
+                    <span class="spinner-border spinner-border-sm" role="status" id="submittingSpinner" style="display: none" aria-hidden="true"></span>
                 </button>
                 <!-- Modal -->
                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
@@ -178,10 +175,8 @@
 
         function sendDataToGAS(form) {
             event.preventDefault();
-            let submitBtn = document.getElementById("formSubmit");
             let spinner = document.getElementById("submittingSpinner");
-            submitBtn.style.display = "none";
-            spinner.style.display = "inline";
+            spinner.style.display = "inline-flex";
             google.script.run.withSuccessHandler(confirmSubmission).sendFormDataToSheets(form);
         }
 
