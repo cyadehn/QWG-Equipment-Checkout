@@ -36,7 +36,13 @@ function sendFormDataToSheets(form) {
       form.confirmAcknowledge
       //form.helmet,
       //form.lights
-    ])
+    ]);
+  MailApp.sendEmail({
+    to: "christopher.dehner@outlook.com",
+    subject: "New Reservation: " + form.event,
+    htmlBody: "Name: " + form.name + "<br>" +
+              "Contact: " + form.contact + "<br>",
+  });
 }
 
 function getCheckoutData() {
